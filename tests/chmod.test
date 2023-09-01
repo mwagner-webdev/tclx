@@ -529,7 +529,7 @@ set myGID [id groupid]
 
 SetUpTestFiles
 
-set ::tcltest::testConstraints(chownWorks) 1
+set ::tcltest::testconstraints(chownWorks) 1
 if {[catch {chown [id userid]  CHMOD.TMP} msg ] ||
     [catch {chgrp [id groupid] CHMOD.TMP} msg ]} {
     puts "********************************************************************"
@@ -538,11 +538,11 @@ if {[catch {chown [id userid]  CHMOD.TMP} msg ] ||
     puts "on this system."
     puts "    $msg"
     puts "********************************************************************"
-    set ::tcltest::testConstraints(chownWorks) 0
+    set ::tcltest::testconstraints(chownWorks) 0
 }
 
 if [infox have_fchown] {
-    set ::tcltest::testConstraints(fchownWorks) 1
+    set ::tcltest::testconstraints(fchownWorks) 1
     set fh [open CHMOD.TMP w]
     if {[catch {chown -fileid [id userid]  $fh} msg ] ||
         [catch {chgrp -fileid [id groupid] $fh} msg ]} {
@@ -552,7 +552,7 @@ if [infox have_fchown] {
         puts "tests skipped on this system."
         puts "    $msg"
         puts "****************************************************************"
-        set ::tcltest::testConstraints(fchownWorks) 0
+        set ::tcltest::testconstraints(fchownWorks) 0
     }
     close $fh
 }

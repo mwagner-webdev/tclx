@@ -134,7 +134,7 @@ proc GenInputFile {docDir manInfoTbl tmpFile} {
 }
 
 #-----------------------------------------------------------------------------
-# Main program for building help from manual files.  Constructs tmp input
+# Main program for building help from manual files.  constructs tmp input
 # file for the buildhelp command.
 
 if {[llength $argv] != 4} {

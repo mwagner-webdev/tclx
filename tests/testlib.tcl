@@ -31,13 +31,13 @@ foreach need {
     fchown fchmod flock fsync ftruncate msgcats posix_signals symlink
     signal_restart truncate waitpid
 } {
-    set ::tcltest::testConstraints(need_$need) [infox have_$need]
+    set ::tcltest::testconstraints(need_$need) [infox have_$need]
 }
 
-set ::tcltest::testConstraints(need_chmod) [llength [info commands chmod]]
+set ::tcltest::testconstraints(need_chmod) [llength [info commands chmod]]
 if {[cequal $::tcl_platform(platform) "unix"]} {
-    set ::tcltest::testConstraints(isRoot)     [cequal [id user] "root"]
-    set ::tcltest::testConstraints(isNotRoot)  \
+    set ::tcltest::testconstraints(isRoot)     [cequal [id user] "root"]
+    set ::tcltest::testconstraints(isNotRoot)  \
 	    [expr {![cequal [id user] "root"]}]
 }
 

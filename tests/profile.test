@@ -340,7 +340,7 @@ test profile-4.4 {profile count tests} {
 #
 # Test of a command that calls procedures from different levels.
 #
-set ::tcltest::testConstraints(tclx_test_eval) \
+set ::tcltest::testconstraints(tclx_test_eval) \
 	[llength [info commands tclx_test_eval]]
 
 proc ProcA5 {} {ProcB5}
