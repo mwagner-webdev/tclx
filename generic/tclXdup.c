@@ -33,7 +33,7 @@ DupFileChannel (Tcl_Interp *interp,
 static int
 TclX_DupObjCmd (ClientData   clientData,
                 Tcl_Interp  *interp,
-                int          objc,
+                Tcl_Size     objc,
                 Tcl_Obj     *CONST objv[]);
 
 
@@ -192,7 +192,7 @@ DupFileChannel (Tcl_Interp *interp, char *srcChannelId, char *targetChannelId)
 static int
 TclX_DupObjCmd (ClientData clientData,
                 Tcl_Interp *interp,
-                int objc,
+                Tcl_Size objc,
                 Tcl_Obj *CONST objv[])
 {
     Tcl_Channel newChannel;

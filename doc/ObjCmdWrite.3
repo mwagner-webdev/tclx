@@ -84,7 +84,7 @@ A simple C extension to Tcl is now presented, and described below:
     int App_DumpArgsObjCmd(clientData, interp, objc, objv)
         void          *clientData;
         Tcl_Interp    *interp;
-        int            objc;
+        Tcl_Size objc;
         Tcl_Obj      **objv;
     {
             int   i;
@@ -249,7 +249,7 @@ values of).
     Tcl_MaxCmd (clientData, interp, objc, objv)
         char         *clientData;
         Tcl_Interp   *interp;
-        int           objc;
+        Tcl_Size objc;
         Tcl_Obj     **objv;
     {
         int maxVal = MININT;
@@ -340,7 +340,7 @@ int
 Tcl_LreverseObjCmd(notUsed, interp, objc, objv)
     ClientData    notUsed;		/* Not used. */
     Tcl_Interp   *interp;		/* Current interpreter. */
-    int           objc;			/* Number of arguments. */
+    Tcl_Size objc;			/* Number of arguments. */
     Tcl_Obj     **obj;			/* Argument strings. */
 {
     int listObjc, lowListIndex, hiListIndex;

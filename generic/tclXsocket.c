@@ -27,13 +27,13 @@ ReturnGetHostError (Tcl_Interp *interp,
 
 static struct hostent *
 InfoGetHost (Tcl_Interp *interp,
-             int         objc,
+             Tcl_Size objc,
              Tcl_Obj   *CONST objv[]);
 
 static int
 TclX_HostInfoObjCmd (ClientData  clientData,
                     Tcl_Interp *interp,
-                    int         objc,
+                    Tcl_Size objc,
                     Tcl_Obj   *CONST objv[]);
 
 
@@ -150,7 +150,7 @@ TclXGetHostInfo (Tcl_Interp *interp, Tcl_Channel channel, int remoteHost)
  *-----------------------------------------------------------------------------
  */
 static struct hostent *
-InfoGetHost (Tcl_Interp *interp, int objc, Tcl_Obj *CONST objv[])
+InfoGetHost (Tcl_Interp *interp, Tcl_Size objc, Tcl_Obj *CONST objv[])
 {
     struct hostent *hostEntry;
     struct in_addr address;
@@ -193,7 +193,7 @@ InfoGetHost (Tcl_Interp *interp, int objc, Tcl_Obj *CONST objv[])
 static int
 TclX_HostInfoObjCmd (ClientData  clientData,
                     Tcl_Interp *interp,
-                    int         objc,
+                    Tcl_Size objc,
                     Tcl_Obj   *CONST objv[])
 {
     struct hostent *hostEntry;

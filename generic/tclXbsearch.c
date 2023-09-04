@@ -51,7 +51,7 @@ BinSearch (binSearchCB_t *searchCBPtr);
 static int 
 TclX_BsearchObjCmd (ClientData clientData, 
                     Tcl_Interp *interp,
-                    int objc,
+                    Tcl_Size objc,
                     Tcl_Obj *CONST objv[]);
 
 /*-----------------------------------------------------------------------------
@@ -295,7 +295,7 @@ BinSearch (binSearchCB_t *searchCBPtr)
 static int
 TclX_BsearchObjCmd (ClientData clientData,
                     Tcl_Interp *interp,
-                    int objc,
+                    Tcl_Size objc,
                     Tcl_Obj *CONST objv[])
 {
     int status;

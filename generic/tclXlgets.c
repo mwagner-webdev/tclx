@@ -56,7 +56,7 @@ ReadListElement (Tcl_Interp  *interp,
 static int 
 TclX_LgetsObjCmd (ClientData  clientData, 
                  Tcl_Interp  *interp, 
-                 int          objc,
+                 Tcl_Size objc,
                  Tcl_Obj     *CONST objv[]);
 
 
@@ -407,7 +407,7 @@ ReadListElement (Tcl_Interp  *interp,
 static int 
 TclX_LgetsObjCmd (ClientData  clientData, 
                  Tcl_Interp  *interp, 
-                 int          objc,
+                 Tcl_Size objc,
                  Tcl_Obj     *CONST objv[])
 {
     Tcl_Channel channel;

@@ -38,19 +38,19 @@ ReadDirCallback (Tcl_Interp  *interp,
 static int 
 TclX_PipeObjCmd (ClientData  clientData,
                  Tcl_Interp *interp,
-                 int         objc,
+                 Tcl_Size    objc,
                  Tcl_Obj    *CONST objv[]);
 
 static int
 TclX_FtruncateObjCmd (ClientData  clientData, 
                       Tcl_Interp *interp, 
-                      int         objc,
+                      Tcl_Size    objc,
                       Tcl_Obj    *CONST objv[]);
 
 static int
 TclX_ReaddirObjCmd (ClientData clientData,
                     Tcl_Interp *interp,
-                    int         objc,
+                    Tcl_Size    objc,
                     Tcl_Obj    *CONST objv[]);
 
 
@@ -66,7 +66,7 @@ TclX_ReaddirObjCmd (ClientData clientData,
 static int 
 TclX_PipeObjCmd (ClientData  clientData,
                  Tcl_Interp *interp,
-                 int         objc,
+                 Tcl_Size    objc,
                  Tcl_Obj    *CONST objv[])
 {
     Tcl_Channel   channels [2];
@@ -159,7 +159,7 @@ TruncateByPath (Tcl_Interp *interp, char *filePath, off_t newSize)
 static int
 TclX_FtruncateObjCmd (ClientData clientData,
                       Tcl_Interp *interp,
-                      int objc,
+                      Tcl_Size objc,
                       Tcl_Obj *CONST objv[])
 {
     int           objIdx, fileIds;
@@ -246,7 +246,7 @@ ReadDirCallback (Tcl_Interp *interp,
 static int
 TclX_ReaddirObjCmd (ClientData clientData,
                     Tcl_Interp *interp,
-                    int objc,
+                    Tcl_Size objc,
                     Tcl_Obj *CONST objv[])
 {
     Tcl_DString  pathBuf;

@@ -83,13 +83,13 @@ ScanContextCopyFile (Tcl_Interp  *interp,
 static int
 TclX_ScancontextObjCmd (ClientData  clientData,
                         Tcl_Interp *interp,
-                        int         objc,
+                        Tcl_Size objc,
                         Tcl_Obj    *CONST objv[]);
 
 static int
 TclX_ScanmatchObjCmd (ClientData  clientData,
                       Tcl_Interp *interp,
-                      int         objc,
+                      Tcl_Size objc,
                       Tcl_Obj    *CONST objv[]);
 
 static void
@@ -118,7 +118,7 @@ ScanFileCloseHandler (ClientData clientData);
 static int
 TclX_ScanfileObjCmd (ClientData  clientData,
                      Tcl_Interp *interp,
-                     int         objc,
+                     Tcl_Size objc,
                      Tcl_Obj    *CONST objv[]);
 
 static void
@@ -330,7 +330,7 @@ ScanContextCopyFile (Tcl_Interp *interp,
 static int
 TclX_ScancontextObjCmd (ClientData clientData,
                         Tcl_Interp *interp,
-                        int objc,
+                        Tcl_Size objc,
                         Tcl_Obj *CONST objv[])
 {
     char *subCommand;
@@ -393,7 +393,7 @@ TclX_ScancontextObjCmd (ClientData clientData,
 static int
 TclX_ScanmatchObjCmd (ClientData clientData,
                       Tcl_Interp *interp,
-                      int objc, Tcl_Obj *CONST objv[])
+                      Tcl_Size objc, Tcl_Obj *CONST objv[])
 {
     scanContext_t  *contextPtr, **tableEntryPtr;
     matchDef_t     *newmatch;
@@ -770,7 +770,7 @@ ScanFileCloseHandler (ClientData clientData)
 static int
 TclX_ScanfileObjCmd (ClientData clientData,
                      Tcl_Interp *interp,
-                     int objc,
+                     Tcl_Size objc,
                      Tcl_Obj *CONST objv[])
 {
     scanContext_t *contextPtr, **tableEntryPtr;

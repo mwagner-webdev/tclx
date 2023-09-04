@@ -41,19 +41,19 @@ CatOpFailedObj (Tcl_Interp *interp,
 static int
 TclX_CatopenObjCmd (ClientData  clientData,
                     Tcl_Interp *interp,
-                    int         objc,
+                    Tcl_Size objc,
                     Tcl_Obj   *CONST objv[]);
 
 static int
 TclX_CatgetsObjCmd (ClientData  clientData,
                     Tcl_Interp *interp,
-                    int         objc,
+                    Tcl_Size objc,
                     Tcl_Obj   *CONST objv[]);
 
 static int
 TclX_CatcloseObjCmd (ClientData  clientData,
                      Tcl_Interp *interp,
-                     int         objc,
+                     Tcl_Size objc,
                      Tcl_Obj   *CONST objv[]);
 
 static void
@@ -171,7 +171,7 @@ CatOpFailedObj (Tcl_Interp *interp,
 static int
 TclX_CatopenObjCmd (ClientData  clientData,
                     Tcl_Interp *interp,
-                    int         objc,
+                    Tcl_Size objc,
                     Tcl_Obj   *CONST objv[])
 {
     int      fail;
@@ -211,7 +211,7 @@ TclX_CatopenObjCmd (ClientData  clientData,
 static int
 TclX_CatgetsObjCmd (ClientData  clientData,
                     Tcl_Interp *interp,
-                    int         objc,
+                    Tcl_Size objc,
                     Tcl_Obj   *CONST objv[])
 {
     nl_catd   *catDescPtr;
@@ -266,7 +266,7 @@ TclX_CatgetsObjCmd (ClientData  clientData,
 static int
 TclX_CatcloseObjCmd (ClientData  clientData,
                      Tcl_Interp *interp,
-                     int         objc,
+                     Tcl_Size objc,
                      Tcl_Obj   *CONST objv[])
 {
     int          fail;

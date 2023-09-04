@@ -73,7 +73,7 @@ ReturnStatItem (Tcl_Interp   *interp,
 static int 
 TclX_FstatObjCmd (ClientData clientData, 
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[]);
 
 
@@ -315,7 +315,7 @@ ReturnStatItem (Tcl_Interp   *interp,
 static int 
 TclX_FstatObjCmd (ClientData clientData, 
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[])
 {
     Tcl_Channel channel;

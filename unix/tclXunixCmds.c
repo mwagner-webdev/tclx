@@ -22,13 +22,13 @@
 static int
 TclX_ChrootObjCmd (ClientData clientData,
                   Tcl_Interp *interp,
-                  int         objc,
+                  Tcl_Size objc,
 			      Tcl_Obj     *CONST objv[]);
 
 static int
 TclX_TimesObjCmd (ClientData   clientData,
                  Tcl_Interp  *interp,
-                 int          objc,
+                 Tcl_Size objc,
                  Tcl_Obj      *CONST objv[]);
 
 
@@ -45,7 +45,7 @@ TclX_TimesObjCmd (ClientData   clientData,
 static int
 TclX_ChrootObjCmd (ClientData clientData,
                   Tcl_Interp *interp,
-                  int         objc,
+                  Tcl_Size objc,
 			      Tcl_Obj     *CONST objv[])
 {
     char   *chrootString;
@@ -78,7 +78,7 @@ TclX_ChrootObjCmd (ClientData clientData,
 static int
 TclX_TimesObjCmd (ClientData   clientData,
                  Tcl_Interp  *interp,
-                 int          objc,
+                 Tcl_Size objc,
                  Tcl_Obj      *CONST objv[])
 {
     struct tms tm;

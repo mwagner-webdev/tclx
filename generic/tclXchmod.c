@@ -38,19 +38,19 @@ ConvSymMode (Tcl_Interp  *interp,
 static int 
 TclX_ChmodObjCmd (ClientData clientData, 
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[]);
 
 static int 
 TclX_ChownObjCmd (ClientData clientData, 
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[]);
 
 static int 
 TclX_ChgrpObjCmd (ClientData clientData, 
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[]);
 
 
@@ -306,9 +306,10 @@ ChmodFileIdObj (Tcl_Interp *interp, modeInfo_t modeInfo, Tcl_Obj *fileIdObj)
  *-----------------------------------------------------------------------------
  */
 static int
-TclX_ChmodObjCmd (ClientData clientData, Tcl_Interp *interp, int objc, Tcl_Obj *CONST objv[])
+TclX_ChmodObjCmd (ClientData clientData, Tcl_Interp *interp, Tcl_Size objc, Tcl_Obj *CONST objv[])
 {
-    int           objIdx, idx, fileObjc, fileIds, result;
+    Tcl_Size      objIdx, idx, fileObjc;
+    int           fileIds, result;
     modeInfo_t    modeInfo;
     Tcl_Obj     **fileObjv;
     char         *fileIdsString;
@@ -368,7 +369,7 @@ TclX_ChmodObjCmd (ClientData clientData, Tcl_Interp *interp, int objc, Tcl_Obj *
  *-----------------------------------------------------------------------------
  */
 static int
-TclX_ChownObjCmd (ClientData clientData, Tcl_Interp *interp, int objc, Tcl_Obj *CONST objv[])
+TclX_ChownObjCmd (ClientData clientData, Tcl_Interp *interp, Tcl_Size objc, Tcl_Obj *CONST objv[])
 {
     int        objIdx, ownerObjc, fileIds;
     Tcl_Obj  **ownerObjv = NULL;
@@ -452,7 +453,7 @@ TclX_ChownObjCmd (ClientData clientData, Tcl_Interp *interp, int objc, Tcl_Obj *
  *-----------------------------------------------------------------------------
  */
 static int
-TclX_ChgrpObjCmd (ClientData clientData, Tcl_Interp *interp, int objc, Tcl_Obj *CONST objv[])
+TclX_ChgrpObjCmd (ClientData clientData, Tcl_Interp *interp, Tcl_Size objc, Tcl_Obj *CONST objv[])
 {
     int        objIdx, fileIds;
     char      *fileIdsSwitch, *groupString;

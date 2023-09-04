@@ -1158,7 +1158,7 @@ TclXOSChangeOwnGrpObj  (Tcl_Interp *interp,
                         Tcl_Obj *fileListObj,
                         char *funcName)
 {
-    int          idx;
+    Tcl_Size     idx;
     struct stat  fileStat;
     uid_t        ownerId;
     gid_t        groupId;
@@ -1166,7 +1166,7 @@ TclXOSChangeOwnGrpObj  (Tcl_Interp *interp,
     Tcl_DString  pathBuf;
     char        *fileNameString;
     Tcl_Obj    **filesObjv;
-    int          fileCount;
+    Tcl_Size     fileCount;
 
     if (ConvertOwnerGroup (interp, options, ownerStr, groupStr,
                            &ownerId, &groupId) != TCL_OK)

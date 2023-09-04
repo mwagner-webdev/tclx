@@ -32,19 +32,19 @@ static int   tclAppPatchlevel  = -1;
 static int 
 TclX_EchoObjCmd (ClientData clientData, 
                  Tcl_Interp *interp,
-                 int         objc,
+                 Tcl_Size objc,
                  Tcl_Obj    *CONST objv[]);
 
 static int 
 TclX_InfoxObjCmd (ClientData clientData, 
                   Tcl_Interp *interp,
-                  int         objc,
+                  Tcl_Size objc,
                   Tcl_Obj    *CONST objv[]);
 
 static int 
 TclX_LoopObjCmd (ClientData clientData, 
                  Tcl_Interp *interp,
-                 int         objc,
+                 Tcl_Size objc,
                  Tcl_Obj    *CONST objv[]);
 
 static int
@@ -58,7 +58,7 @@ GlobalImport (Tcl_Interp *interp);
 static int
 TclX_Try_EvalObjCmd (ClientData clientData, 
                      Tcl_Interp *interp,
-                     int         objc,
+                     Tcl_Size objc,
                      Tcl_Obj    *CONST objv[]);
 
 
@@ -118,7 +118,7 @@ TclX_SetAppInfo (int defaultValues,
 static int
 TclX_EchoObjCmd (ClientData dummy,
                  Tcl_Interp *interp,
-                 int objc,
+                 Tcl_Size objc,
                  Tcl_Obj *CONST objv[])
 {
     int	  idx;
@@ -163,7 +163,7 @@ TclX_EchoObjCmd (ClientData dummy,
 static int
 TclX_InfoxObjCmd (ClientData clientData,
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[])
 {
     Tcl_Obj *resultPtr = Tcl_GetObjResult (interp);
@@ -352,7 +352,7 @@ SetLoopCounter (Tcl_Interp *interp, char *varName, int idx)
 static int
 TclX_LoopObjCmd (ClientData dummy,
                  Tcl_Interp *interp,
-                 int objc,
+                 Tcl_Size objc,
                  Tcl_Obj *CONST objv[])
 {
     int result = TCL_OK;
@@ -483,7 +483,7 @@ GlobalImport (Tcl_Interp *interp)
 static int
 TclX_Try_EvalObjCmd (ClientData  dummy,
                      Tcl_Interp *interp,
-                     int         objc,
+                     Tcl_Size objc,
                      Tcl_Obj *CONST objv[])
 {
     int code, code2;

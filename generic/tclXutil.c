@@ -760,9 +760,9 @@ TclX_JoinPath (char *path1, char *path2, Tcl_DString *joinedPath)
 int
 TclX_WrongArgs (Tcl_Interp *interp, Tcl_Obj *commandNameObj, char *string)
 {
-    char    *commandName;
-    Tcl_Obj *resultPtr = Tcl_GetObjResult (interp);
-    int      commandLength;
+    char     *commandName;
+    Tcl_Obj  *resultPtr = Tcl_GetObjResult (interp);
+    Tcl_Size commandLength;
 
     commandName = Tcl_GetStringFromObj (commandNameObj, &commandLength);
 
@@ -833,7 +833,7 @@ TclX_IsNullObj (Tcl_Obj *objPtr)
 {
     static const Tcl_ObjType *listType = NULL;
     static const Tcl_ObjType *stringType = NULL;
-    int length;
+    Tcl_Size length;
     
     /*
      * Only get types once, as they must be static.

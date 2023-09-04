@@ -25,43 +25,43 @@
 static int
 TclX_LvarcatObjCmd (ClientData   clientData,
                     Tcl_Interp  *interp,
-                    int          objc,
+                    Tcl_Size objc,
                     Tcl_Obj     *CONST objv[]);
 
 static int
 TclX_LvarpopObjCmd (ClientData   clientData,
                     Tcl_Interp  *interp,
-                    int          objc,
+                    Tcl_Size objc,
                     Tcl_Obj    *CONST objv[]);
 
 static int
 TclX_LvarpushObjCmd (ClientData   clientData,
                      Tcl_Interp  *interp,
-                     int          objc,
+                     Tcl_Size objc,
                      Tcl_Obj    *CONST objv[]);
 
 static int
 TclX_LemptyObjCmd (ClientData   clientData,
                    Tcl_Interp  *interp,
-                   int          objc,
+                   Tcl_Size objc,
                    Tcl_Obj    *CONST objv[]);
 
 static int
 TclX_LassignObjCmd (ClientData   clientData,
                     Tcl_Interp  *interp,
-                    int          objc,
+                    Tcl_Size objc,
                     Tcl_Obj    *CONST objv[]);
 
 static int
 TclX_LmatchObjCmd (ClientData   clientData,
                    Tcl_Interp  *interp,
-                   int          objc,
+                   Tcl_Size objc,
                    Tcl_Obj    *CONST objv[]);
 
 static int
 TclX_LcontainObjCmd (ClientData   clientData,
                      Tcl_Interp  *interp,
-                     int          objc,
+                     Tcl_Size objc,
                      Tcl_Obj    *CONST objv[]);
 
 
@@ -74,7 +74,7 @@ TclX_LcontainObjCmd (ClientData   clientData,
 static int
 TclX_LvarcatObjCmd (ClientData   clientData,
                     Tcl_Interp  *interp,
-                    int          objc,
+                    Tcl_Size objc,
                     Tcl_Obj     *CONST objv[])
 {
     Tcl_Obj *varObjPtr, *newObjPtr;
@@ -137,7 +137,7 @@ TclX_LvarcatObjCmd (ClientData   clientData,
 static int
 TclX_LvarpopObjCmd (ClientData   clientData,
                     Tcl_Interp  *interp,
-                    int          objc,
+                    Tcl_Size objc,
                     Tcl_Obj    *CONST objv[])
 {
     Tcl_Obj *listVarPtr, *newVarObj, *returnElemPtr = NULL;
@@ -232,7 +232,7 @@ TclX_LvarpopObjCmd (ClientData   clientData,
 static int
 TclX_LvarpushObjCmd (ClientData   clientData,
                      Tcl_Interp  *interp,
-                     int          objc,
+                     Tcl_Size objc,
                      Tcl_Obj    *CONST objv[])
 {
     Tcl_Obj *listVarPtr, *newVarObj;
@@ -303,7 +303,7 @@ TclX_LvarpushObjCmd (ClientData   clientData,
 static int
 TclX_LemptyObjCmd (ClientData   clientData,
                    Tcl_Interp  *interp,
-                   int          objc,
+                   Tcl_Size objc,
                    Tcl_Obj    *CONST objv[])
 {
     int length;
@@ -342,7 +342,7 @@ TclX_LemptyObjCmd (ClientData   clientData,
 static int
 TclX_LassignObjCmd (ClientData   clientData,
                     Tcl_Interp  *interp,
-                    int          objc,
+                    Tcl_Size objc,
                     Tcl_Obj    *CONST objv[])
 {
     int listObjc, listIdx, idx, remaining;
@@ -404,7 +404,7 @@ TclX_LassignObjCmd (ClientData   clientData,
 static int
 TclX_LmatchObjCmd (ClientData   clientData,
                    Tcl_Interp  *interp,
-                   int          objc,
+                   Tcl_Size objc,
                    Tcl_Obj    *CONST objv[])
 {
 #define EXACT   0
@@ -501,7 +501,7 @@ TclX_LmatchObjCmd (ClientData   clientData,
 static int
 TclX_LcontainObjCmd (ClientData   clientData,
                      Tcl_Interp  *interp,
-                     int          objc,
+                     Tcl_Size objc,
                      Tcl_Obj    *CONST objv[])
 {
     int listObjc, idx;
@@ -540,6 +540,10 @@ TclX_LcontainObjCmd (ClientData   clientData,
 void
 TclX_ListInit (Tcl_Interp *interp)
 {
+    int major;
+    int minor;
+    Tcl_GetVersion(&major, &minor, NULL, NULL);
+
     Tcl_CreateObjCommand(interp, 
 			 "lvarcat", 
 			 TclX_LvarcatObjCmd, 
@@ -564,12 +568,6 @@ TclX_ListInit (Tcl_Interp *interp)
                          (ClientData) NULL,
 			 (Tcl_CmdDeleteProc*) NULL);
 
-    Tcl_CreateObjCommand(interp, 
-			 "lassign",
-			 TclX_LassignObjCmd, 
-                         (ClientData) NULL,
-			 (Tcl_CmdDeleteProc*) NULL);
-
     Tcl_CreateObjCommand(interp,
 			 "lmatch",
 			 TclX_LmatchObjCmd, 
@@ -581,6 +579,17 @@ TclX_ListInit (Tcl_Interp *interp)
 			 TclX_LcontainObjCmd, 
                          (ClientData) NULL,
 			 (Tcl_CmdDeleteProc*) NULL);
+
+    if (major < 9 || (major == 8 && minor < 5)) {
+        // The lassign command as implemented here crashes with
+        // newer Tcl versions and is integrated into the core there
+        // anyway.
+        Tcl_CreateObjCommand(interp, 
+			 "lassign",
+			 TclX_LassignObjCmd, 
+                         (ClientData) NULL,
+			 (Tcl_CmdDeleteProc*) NULL);
+    }
 }
 
 

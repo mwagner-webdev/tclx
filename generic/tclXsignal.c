@@ -326,13 +326,13 @@ SignalCmdCleanUp (ClientData  clientData,
 static int
 TclX_SignalObjCmd (ClientData   clientData,
                    Tcl_Interp  *interp,
-                   int          objc,
+                   Tcl_Size objc,
                    Tcl_Obj     *CONST objv[]);
 
 static int
 TclX_KillObjCmd (ClientData   clientData,
                  Tcl_Interp  *interp,
-                 int          objc,
+                 Tcl_Size objc,
                  Tcl_Obj     *CONST objv[]);
 
 
@@ -1310,7 +1310,7 @@ SetSignalStates (Tcl_Interp *interp, Tcl_Obj *sigStatesObjPtr)
 static int
 TclX_SignalObjCmd (ClientData   clientData,
                    Tcl_Interp  *interp,
-                   int          objc,
+                   Tcl_Size objc,
                    Tcl_Obj     *CONST objv[])
 {
     unsigned char signals [MAXSIG];
@@ -1450,7 +1450,7 @@ TclX_SignalObjCmd (ClientData   clientData,
 static int
 TclX_KillObjCmd (ClientData   clientData,
                  Tcl_Interp  *interp,
-                 int          objc,
+                 Tcl_Size objc,
                  Tcl_Obj     *CONST objv[])
 {
     int    signalNum, nextArg, idx, procId, procObjc;

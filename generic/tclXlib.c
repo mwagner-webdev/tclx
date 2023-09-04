@@ -126,19 +126,19 @@ LoadDirIndexes (Tcl_Interp  *interp,
 static int
 TclX_load_tndxsObjCmd (ClientData  clientData,
                        Tcl_Interp *interp,
-                       int         objc,
+                       Tcl_Size objc,
                        Tcl_Obj    *CONST objv[]);
                                    
 static int
 TclX_Auto_load_pkgObjCmd (ClientData clientData, 
                           Tcl_Interp *interp,
-                          int objc,
+                          Tcl_Size objc,
                           Tcl_Obj *CONST objv[]);
 
 static int
 TclX_LoadlibindexObjCmd (ClientData clientData, 
                          Tcl_Interp *interp,
-                         int objc,
+                         Tcl_Size objc,
                          Tcl_Obj *CONST objv[]);
 
 
@@ -854,7 +854,7 @@ LoadDirIndexes (Tcl_Interp *interp, char *dirName)
 static int
 TclX_load_tndxsObjCmd (ClientData  clientData,
                        Tcl_Interp *interp,
-                       int         objc,
+                       Tcl_Size objc,
                        Tcl_Obj    *CONST objv[])
 {
     char *dirname;
@@ -878,7 +878,7 @@ TclX_load_tndxsObjCmd (ClientData  clientData,
 static int
 TclX_Auto_load_pkgObjCmd (ClientData clientData, 
                           Tcl_Interp *interp,
-                          int objc,
+                          Tcl_Size objc,
                           Tcl_Obj *CONST objv[])
 {
     char     *fileName;
@@ -914,7 +914,7 @@ TclX_Auto_load_pkgObjCmd (ClientData clientData,
 static int
 TclX_LoadlibindexObjCmd (ClientData clientData, 
                          Tcl_Interp *interp,
-                         int objc,
+                         Tcl_Size objc,
                          Tcl_Obj *CONST objv[])
 {
     char        *pathName;

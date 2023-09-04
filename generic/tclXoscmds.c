@@ -22,43 +22,43 @@
 static int 
 TclX_AlarmObjCmd (ClientData clientData,
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[]);
 
 static int 
 TclX_LinkObjCmd (ClientData clientData,
                  Tcl_Interp *interp,
-                 int objc,
+                 Tcl_Size objc,
                  Tcl_Obj *CONST objv[]);
 
 static int 
 TclX_NiceObjCmd (ClientData clientData,
                  Tcl_Interp *interp,
-                 int objc,
+                 Tcl_Size objc,
                  Tcl_Obj *CONST objv[]);
 
 static int 
 TclX_SleepObjCmd (ClientData clientData,
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[]);
 
 static int 
 TclX_SyncObjCmd (ClientData clientData,
                  Tcl_Interp *interp,
-                 int objc,
+                 Tcl_Size objc,
                  Tcl_Obj *CONST objv[]);
 
 static int 
 TclX_SystemObjCmd (ClientData clientData,
                    Tcl_Interp *interp,
-                   int objc,
+                   Tcl_Size objc,
                    Tcl_Obj *CONST objv[]);
 
 static int 
 TclX_UmaskObjCmd (ClientData clientData,
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[]);
 
 
@@ -75,7 +75,7 @@ TclX_UmaskObjCmd (ClientData clientData,
 static int 
 TclX_AlarmObjCmd (ClientData clientData,
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[])
 {
     double seconds;
@@ -105,7 +105,7 @@ TclX_AlarmObjCmd (ClientData clientData,
 static int 
 TclX_LinkObjCmd (ClientData clientData,
                  Tcl_Interp *interp,
-                 int objc,
+                 Tcl_Size objc,
                  Tcl_Obj *CONST objv[])
 {
     char *srcPath, *destPath;
@@ -174,7 +174,7 @@ TclX_LinkObjCmd (ClientData clientData,
 static int 
 TclX_NiceObjCmd (ClientData clientData,
                  Tcl_Interp *interp,
-                 int objc,
+                 Tcl_Size objc,
                  Tcl_Obj *CONST objv[])
 {
     Tcl_Obj    *resultPtr = Tcl_GetObjResult (interp);
@@ -223,7 +223,7 @@ TclX_NiceObjCmd (ClientData clientData,
 static int 
 TclX_SleepObjCmd (ClientData clientData,
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[])
 {
     double time;
@@ -251,7 +251,7 @@ TclX_SleepObjCmd (ClientData clientData,
 static int 
 TclX_SyncObjCmd (ClientData clientData,
                  Tcl_Interp *interp,
-                 int objc,
+                 Tcl_Size objc,
                  Tcl_Obj *CONST objv[])
 {
     Tcl_Channel  channel;
@@ -285,7 +285,7 @@ TclX_SyncObjCmd (ClientData clientData,
 static int 
 TclX_SystemObjCmd (ClientData clientData,
                    Tcl_Interp *interp,
-                   int objc,
+                   Tcl_Size objc,
                    Tcl_Obj *CONST objv[])
 {
     Tcl_Obj *cmdObjPtr;
@@ -320,7 +320,7 @@ TclX_SystemObjCmd (ClientData clientData,
 static int 
 TclX_UmaskObjCmd (ClientData clientData,
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[])
 {
     int    mask;

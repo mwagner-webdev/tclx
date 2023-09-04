@@ -125,10 +125,10 @@ ProfStrCommandEval (ClientData    clientData,
 static int
 ProfObjCommandEval (ClientData    clientData,
                     Tcl_Interp   *interp,
-                    int           objc,
+                    Tcl_Size objc,
                     Tcl_Obj      *CONST objv[]);
 
-static Tcl_CmdObjTraceProc ProfTraceRoutine;
+static Tcl_CmdObjTraceProc2 ProfTraceRoutine;
 
 static void
 CleanDataTable (profInfo_t *infoPtr);
@@ -153,7 +153,7 @@ TurnOffProfiling (Tcl_Interp *interp,
 static int
 TclX_ProfileObjCmd (ClientData   clientData,
                     Tcl_Interp  *interp,
-                    int          objc,
+                    Tcl_Size objc,
                     Tcl_Obj    *CONST objv[]);
 
 static void
@@ -534,7 +534,7 @@ ProfStrCommandEval (ClientData    clientData,
 static int
 ProfObjCommandEval (ClientData    clientData,
                     Tcl_Interp   *interp,
-                    int           objc,
+                    Tcl_Size objc,
                     Tcl_Obj      *CONST objv[])
 {
     profInfo_t *infoPtr = (profInfo_t *) clientData;
@@ -558,10 +558,10 @@ ProfObjCommandEval (ClientData    clientData,
 static int
 ProfTraceRoutine (ClientData  clientData,
                   Tcl_Interp *interp,
-                  int         evalLevel,
+                  Tcl_Size    evalLevel,
                   const char *command,
                   Tcl_Command cmd,
-                  int         objc,
+                  Tcl_Size objc,
                   Tcl_Obj    *CONST objv[])
 {
     /* struct Tcl_Obj * const *objv; */
@@ -801,7 +801,7 @@ TurnOffProfiling (Tcl_Interp *interp, profInfo_t *infoPtr, char *varName)
 static int
 TclX_ProfileObjCmd (ClientData   clientData,
                     Tcl_Interp  *interp,
-                    int          objc,
+                    Tcl_Size objc,
                     Tcl_Obj    *CONST objv[])
 {
     profInfo_t *infoPtr = (profInfo_t *) clientData;

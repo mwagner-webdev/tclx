@@ -84,7 +84,7 @@ SetFcntlAttrObj (Tcl_Interp  *interp,
 static int 
 TclX_FcntlObjCmd (ClientData clientData, 
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[]);
 
 
@@ -274,7 +274,7 @@ SetFcntlAttrObj (Tcl_Interp *interp,
 static int
 TclX_FcntlObjCmd (ClientData clientData,
                   Tcl_Interp *interp,
-                  int objc,
+                  Tcl_Size objc,
                   Tcl_Obj *CONST objv[])
 {
     Tcl_Channel  channel;

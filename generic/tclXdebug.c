@@ -89,7 +89,7 @@ CmdTraceRoutine (ClientData    clientData,
 static int
 TclX_CmdtraceObjCmd (ClientData clientData, 
                      Tcl_Interp *interp,
-                     int objc,
+                     Tcl_Size objc,
                      Tcl_Obj *CONST objv[]);
 
 static void
@@ -386,7 +386,7 @@ CmdTraceRoutine (ClientData clientData,
 static int
 TclX_CmdtraceObjCmd (ClientData clientData,
                      Tcl_Interp *interp,
-                     int objc,
+                     Tcl_Size objc,
                      Tcl_Obj *CONST objv[])
 {
     traceInfo_pt  infoPtr = (traceInfo_pt) clientData;

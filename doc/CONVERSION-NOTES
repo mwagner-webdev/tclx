@@ -40,7 +40,7 @@ int
 TclX_LassignObjCmd (clientData, interp, objc, objv)
     ClientData   clientData;     
     Tcl_Interp  *interp;
-    int          objc;
+    Tcl_Size objc;
     Tcl_Obj    **objv;
 
 

@@ -143,25 +143,25 @@ UpdateStringOfKeyedList (Tcl_Obj *keylPtr);
 static int 
 TclX_KeylgetObjCmd (ClientData   clientData,
                     Tcl_Interp  *interp,
-                    int	     objc,
+                    Tcl_Size objc,
                     Tcl_Obj	    *CONST objv[]);
 
 static int
 TclX_KeylsetObjCmd (ClientData   clientData,
                     Tcl_Interp  *interp,
-                    int	     objc,
+                    Tcl_Size objc,
                     Tcl_Obj	    *CONST objv[]);
 
 static int 
 TclX_KeyldelObjCmd (ClientData   clientData,
                     Tcl_Interp  *interp,
-                    int	     objc,
+                    Tcl_Size objc,
                     Tcl_Obj	    *CONST objv[]);
 
 static int 
 TclX_KeylkeysObjCmd (ClientData   clientData,
                      Tcl_Interp  *interp,
-                     int	      objc,
+                     Tcl_Size objc,
                      Tcl_Obj     *CONST objv[]);
 
 /*
@@ -1005,7 +1005,7 @@ TclX_KeyedListGetKeys (Tcl_Interp *interp,
 static int
 TclX_KeylgetObjCmd (ClientData      clientData,
                     Tcl_Interp     *interp,
-                    int             objc,
+                    Tcl_Size objc,
                     Tcl_Obj *CONST objv[])
 {
     Tcl_Obj *keylPtr, *valuePtr;
@@ -1083,7 +1083,7 @@ TclX_KeylgetObjCmd (ClientData      clientData,
 static int
 TclX_KeylsetObjCmd (ClientData     clientData,
                     Tcl_Interp    *interp,
-                    int            objc,
+                    Tcl_Size objc,
                     Tcl_Obj *CONST objv[])
 {
     Tcl_Obj *keylVarPtr, *newVarObj;
@@ -1142,7 +1142,7 @@ TclX_KeylsetObjCmd (ClientData     clientData,
 static int
 TclX_KeyldelObjCmd (ClientData  clientData,
                     Tcl_Interp *interp,
-                    int         objc,
+                    Tcl_Size objc,
                     Tcl_Obj    *CONST objv[])
 {
     Tcl_Obj *keylVarPtr, *keylPtr;
@@ -1203,7 +1203,7 @@ TclX_KeyldelObjCmd (ClientData  clientData,
 static int
 TclX_KeylkeysObjCmd (ClientData   clientData,
                      Tcl_Interp  *interp,
-                     int          objc,
+                     Tcl_Size objc,
                      Tcl_Obj     *CONST objv[])
 {
     Tcl_Obj *keylPtr, *listObjPtr;

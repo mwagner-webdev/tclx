@@ -79,7 +79,7 @@ ReturnSelectedFileList (fd_set        *fileDescSetPtr,
 static int 
 TclX_SelectObjCmd (ClientData clientData, 
                    Tcl_Interp *interp,
-                   int objc,
+                   Tcl_Size objc,
                    Tcl_Obj *CONST objv[]);
 
 
@@ -274,7 +274,7 @@ ReturnSelectedFileList (fd_set        *fileDescSetPtr,
 static int 
 TclX_SelectObjCmd (ClientData clientData, 
                    Tcl_Interp *interp,
-                   int objc,
+                   Tcl_Size objc,
                    Tcl_Obj *CONST objv[])
 {
     static int chanAccess [] = {TCL_READABLE, TCL_WRITABLE, 0};
@@ -405,7 +405,7 @@ static int
 TclX_SelectObjCmd (clientData, interp, objc, objv)
     ClientData   clientData;
     Tcl_Interp  *interp;
-    int          objc;
+    Tcl_Size objc;
     Tcl_Obj     *CONST objv[]
 {
     Tcl_AppendResult(interp, Tcl_GetString(objv[0]),
